@@ -1,3 +1,6 @@
+"""
+Commented-out since this is the no-tensorrrt-dependencies version of autoware_launch.twizy
+
 # Copyright 2020 Tier IV, Inc. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -383,3 +386,4 @@ def generate_launch_description():
             OpaqueFunction(function=launch_setup),
         ]
     )
+"""
