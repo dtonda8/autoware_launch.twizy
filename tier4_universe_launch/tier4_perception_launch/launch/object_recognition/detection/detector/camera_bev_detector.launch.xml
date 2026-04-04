@@ -1,3 +1,6 @@
+<!--
+Commented-out since this is the no-tensorrt-dependencies version of autoware_launch.twizy
+
 <?xml version="1.0"?>
 <launch>
   <!-- Camera parameters -->
@@ -47,3 +50,4 @@
     </include>
   </group>
 </launch>
+-->
