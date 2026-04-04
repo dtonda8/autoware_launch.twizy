@@ -1,9 +1,8 @@
 <!--
-Commented-out since this is the no-tensorrt-dependencies version of autoware_launch.twizy
+Commented-out since this is the no-nvidia-dependencies version of autoware_launch.twizy
 
 <?xml version="1.0"?>
 <launch>
-  <!-- Camera parameters -->
   <arg name="input/camera0/image"/>
   <arg name="input/camera0/info"/>
   <arg name="input/camera1/image"/>
@@ -23,11 +22,9 @@ Commented-out since this is the no-tensorrt-dependencies version of autoware_lau
   <arg name="output/objects"/>
   <arg name="number_of_cameras"/>
 
-  <!-- Model parameters -->
   <arg name="data_path" default="$(env HOME)/autoware_data" description="packages data and artifacts directory path"/>
   <arg name="bevdet_model_name" default="bevdet_one_lt_d"/>
   <arg name="bevdet_model_path" default="$(var data_path)/tensorrt_bevdet"/>
-  <!-- BEVDet -->
   <group>
     <push-ros-namespace namespace="bevdet"/>
     <include file="$(find-pkg-share autoware_tensorrt_bevdet)/launch/tensorrt_bevdet.launch.xml">

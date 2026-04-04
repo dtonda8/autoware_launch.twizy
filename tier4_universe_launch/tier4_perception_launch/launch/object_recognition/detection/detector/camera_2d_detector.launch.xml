@@ -1,5 +1,5 @@
 <!--
-Commented-out since this is the no-tensorrt-dependecies version of autoware_launch.twizy
+Commented-out since this is the no-nvidia-dependecies version of autoware_launch.twizy
 
 <?xml version="1.0"?>
 <launch>

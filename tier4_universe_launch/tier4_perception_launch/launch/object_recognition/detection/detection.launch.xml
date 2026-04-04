@@ -311,10 +311,9 @@
     </include>
   </group>
   <!--
-  Commented-out since this is the no-tensorrt-dependencies version of autoware_launch.twizy
+  Commented-out since this is the no-nvidia-dependencies version of autoware_launch.twizy
 
   <group scoped="false" if="$(eval '&quot;$(var mode)&quot;==&quot;camera&quot;')">
-    <!-- Camera-based bev detectors-->
     <include file="$(find-pkg-share tier4_perception_launch)/launch/object_recognition/detection/detector/camera_bev_detector.launch.xml">
       <arg name="input/camera0/image" value="$(var input/camera0/image)"/>
       <arg name="input/camera0/info" value="$(var input/camera0/info)"/>

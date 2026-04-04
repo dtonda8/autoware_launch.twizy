@@ -48,9 +48,13 @@ class GroundSegmentationPipeline:
             context
         )
         self.use_time_series_filter = LaunchConfiguration("use_time_series_filter").perform(context)
+
+        # Commented-out since this is the no-nvidia-dependencies version of autoware_launch.twizy
+        """
         self.use_cuda_ground_segmentation = (
             LaunchConfiguration("use_cuda_ground_segmentation").perform(context).lower() == "true"
         )
+        """
         # check if self.use_single_frame_filter is bool
         if isinstance(self.use_single_frame_filter, str):
             self.use_single_frame_filter = self.use_single_frame_filter.lower() == "true"
@@ -538,6 +542,8 @@ def launch_setup(context, *args, **kwargs):
     pipeline = GroundSegmentationPipeline(context)
 
     components = []
+    # Commented-out since this is the no-nvidia-dependencies version of autoware_launch.twizy
+    """
     if pipeline.use_cuda_ground_segmentation:
         ground_segmentation_node_param = ParameterFile(
             param_file=LaunchConfiguration("cuda_ground_segmentation_node_param_path").perform(
@@ -577,6 +583,7 @@ def launch_setup(context, *args, **kwargs):
                 target_container=LaunchConfiguration("pointcloud_container_name"),
             )
         ]
+    """
 
     components.extend(
         pipeline.create_single_frame_obstacle_segmentation_components(
@@ -645,6 +652,9 @@ def generate_launch_description():
             "/config/occupancy_grid_map_outlier_filter.param.yaml",
         ],
     )
+
+    # Commented-out since this is the no-nvidia-dependencies version of autoware_launch.twizy
+    """
     add_launch_arg(
         "cuda_ground_segmentation_node_param_path",
         [
@@ -652,6 +662,7 @@ def generate_launch_description():
             "/config/cuda_scan_ground_segmentation_filter.param.yaml",
         ],
     )
+    """
 
     set_container_executable = SetLaunchConfiguration(
         "container_executable",

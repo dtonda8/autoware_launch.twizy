@@ -48,7 +48,7 @@
   <exec_depend>autoware_simpl_prediction</exec_depend>
   <exec_depend>autoware_simple_object_merger</exec_depend>
   <!--
-  Commented-out since this is the no-tensorrt-dependencies version of autoware_launch.twizy
+  Commented-out since this is the no-nvidia-dependencies version of autoware_launch.twizy
 
   <exec_depend>autoware_tensorrt_bevdet</exec_depend>
   <exec_depend>autoware_tensorrt_yolox</exec_depend>
