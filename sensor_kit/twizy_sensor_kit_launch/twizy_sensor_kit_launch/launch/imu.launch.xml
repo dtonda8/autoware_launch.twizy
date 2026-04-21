@@ -1,0 +1,20 @@
+<!-- Adapted from: https://github.com/autowarefoundation/autoware_launch/blob/main/sensor_kit/awsim_sensor_kit_launch/awsim_sensor_kit_launch/launch/imu.launch.xml -->
+<!-- Despite filename, this file doesn't actually launch the IMU, rather, launches required modules to process IMU -->
+<!-- IMU is launched with SD-VehicleInterface -->
+<launch>
+  <group>
+    <push-ros-namespace namespace="imu"/>
+    <include file="$(find-pkg-share autoware_imu_corrector)/launch/imu_corrector.launch.xml">
+      <arg name="input_topic" value="sd_imu_raw"/>
+      <arg name="output_topic" value="imu_data"/>
+      <!-- We are using default node values -->
+    </include>
+
+    <include file="$(find-pkg-share autoware_imu_corrector)/launch/gyro_bias_estimator.launch.xml">
+      <arg name="input_imu_raw" value="sd_imu_raw"/>
+      <arg name="input_odom" value="/localization/kinematic_state"/>
+      <arg name="input_pose_ndt" value="/localization/pose_estimator/pose_with_covariance"/>
+      <!-- We are using default node values -->
+    </include>
+  </group>
+</launch>

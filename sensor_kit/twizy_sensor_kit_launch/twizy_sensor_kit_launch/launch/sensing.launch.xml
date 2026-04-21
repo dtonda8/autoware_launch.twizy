@@ -13,13 +13,13 @@
       <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
     </include>
 
-    <!-- Skipping, reasoning: https://github.com/Monash-Connected-Autonomous-Vehicle/autoware/issues/91 -->
+    <!-- IMU Driver -->
+    <include file="$(find-pkg-share twizy_sensor_kit_launch)/launch/imu.launch.xml"/>
+
     <!-- Vehicle Velocity Converter  -->
-    <!--
     <include file="$(find-pkg-share autoware_vehicle_velocity_converter)/launch/vehicle_velocity_converter.launch.xml">
       <arg name="input_vehicle_velocity_topic" value="/vehicle/status/velocity_status"/>
       <arg name="output_twist_with_covariance" value="/sensing/vehicle_velocity_converter/twist_with_covariance"/>
     </include>
-    -->
   </group>
 </launch>
